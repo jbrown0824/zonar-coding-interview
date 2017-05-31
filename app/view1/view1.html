@@ -1,1 +1,38 @@
-<p>This is the partial for view 1.</p>
+
+<a href ng-click="refreshUsers()">Refresh User List</a>
+
+<div ng-show="users.loading">Loading users...</div>
+<div ng-show="users.loading === false && users.initialized === true && users.data.length === 0">No users found</div>
+
+<br /><br />
+
+<div class="panes">
+    <div ng-show="users.data.length > 0" class="users">
+        <ul ng-repeat="user in users.data">
+            <li><a href ng-click="selectUser(user)">{{user.first_name}} {{user.last_name}}</a></li>
+        </ul>
+    </div>
+
+    <div ng-show="selectedUser !== null" class="selected-user">
+        <a href ng-click="clearSelectedUser()">Cancel / Close</a>
+        <h3>Update {{selectedUser.first_name}} {{selectedUser.last_name}}</h3>
+        <form ng-submit="updateUser()">
+            <label>First Name</label>
+            <input ng-model="selectedUser.first_name" /><br />
+
+            <br />
+
+            <label>Last Name</label>
+            <input ng-model="selectedUser.last_name" /><br />
+
+            <br />
+
+            <label>Email</label>
+            <input ng-model="selectedUser.email" /><br />
+
+            <br />
+
+            <input type="submit" value="Update User" />
+        </form>
+    </div>
+</div>

@@ -1,5 +1,14 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+
+<a href ng-click="refreshBooks()">Refresh Book List</a>
+
+<div ng-show="books.loading">Loading books...</div>
+<div ng-show="books.loading === false && books.initialized === true && books.data.length === 0">No books found</div>
+
+<div ng-show="books.data.length > 0" class="books">
+  <ul ng-repeat="book in books.data">
+    <li>
+      <b>{{book.title}}</b><br>
+      {{book.summary}}
+    </li>
+  </ul>
+</div>

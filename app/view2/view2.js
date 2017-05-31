@@ -9,6 +9,12 @@ angular.module('myApp.view2', ['ngRoute'])
   });
 }])
 
-.controller('View2Ctrl', [function() {
+.controller('View2Ctrl', ['$scope', 'api', 'dataStore', function($scope, api, dataStore) {
+  api.getBooks();
 
+  $scope.refreshUsers = function() {
+    api.getBooks();
+  };
+
+  $scope.books = dataStore.get('books');
 }]);

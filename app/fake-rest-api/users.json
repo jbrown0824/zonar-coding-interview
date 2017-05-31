@@ -1,0 +1,56 @@
+[
+    {
+        "email": "bruce@batman.com",
+        "first_name": "Bruce",
+        "id": 10,
+        "last_name": "Wayne"
+    },
+    {
+        "email": "superman@justiceleague.com",
+        "first_name": "Clark",
+        "id": 11,
+        "last_name": "Kent"
+    },
+    {
+        "email": "greenlantern@justiceleague.com",
+        "first_name": "Hal",
+        "id": 12,
+        "last_name": "Jordan"
+    },
+    {
+        "email": "flash@justiceleague.com",
+        "first_name": "Barry",
+        "id": 13,
+        "last_name": "Allen"
+    },
+    {
+        "email": "wonderwoman@justiceleague.com",
+        "first_name": "Diana",
+        "id": 14,
+        "last_name": "Prince"
+    },
+    {
+        "email": "greenarrow@justiceleague.com",
+        "first_name": "Oliver",
+        "id": 15,
+        "last_name": "Queen"
+    },
+    {
+        "email": "lex@secretsocietyofsupervillains.com",
+        "first_name": "Lex",
+        "id": 16,
+        "last_name": "Luthor"
+    },
+    {
+        "email": "joker@secretsocietyofsupervillains.com",
+        "first_name": "Jack",
+        "id": 17,
+        "last_name": "Naiper"
+    },
+    {
+        "email": "deathstroke@secretsocietyofsupervillains",
+        "first_name": "Slade",
+        "id": 18,
+        "last_name": "Wilson"
+    }
+]

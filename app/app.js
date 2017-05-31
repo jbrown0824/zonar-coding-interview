@@ -12,3 +12,22 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 
   $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
+
+
+var books = [
+    {
+      id: 1,
+      author: 'Author',
+      title: 'Title',
+      summary: 'Summary'
+    }
+];
+
+var users = [
+    {
+        email: 'email@gmail.com',
+        id: 1,
+        first_name: 'Bob',
+        last_name: 'Bobberson'
+    }
+];
