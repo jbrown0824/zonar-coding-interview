@@ -7,13 +7,13 @@
 <br /><br />
 
 <div class="panes">
-    <div ng-show="users.data.length > 0" class="users">
+    <div ng-show="users.data.length > 0" class="users pane">
         <ul ng-repeat="user in users.data">
             <li><a href ng-click="selectUser(user)">{{user.first_name}} {{user.last_name}}</a></li>
         </ul>
     </div>
 
-    <div ng-show="selectedUser !== null" class="selected-user">
+    <div ng-show="selectedUser !== null" class="active-pane pane">
         <a href ng-click="clearSelectedUser()">Cancel / Close</a>
         <h3>Update {{selectedUser.first_name}} {{selectedUser.last_name}}</h3>
         <form ng-submit="updateUser()">
@@ -34,5 +34,13 @@
 
             <input type="submit" value="Update User" />
         </form>
+
+        <br />
+
+        <h3>Wishlist</h3>
+
+        <ul ng-repeat="book in getUserWishlist(selectedUser.id)">
+            <li>{{book.title}}</li>
+        </ul>
     </div>
 </div>

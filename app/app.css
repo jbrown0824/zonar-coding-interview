@@ -30,17 +30,20 @@
   clear: both;
 }
 
+.pane {
+  float: left;
+  width: 50%;
+  margin: 0;
+  padding: 0;
+}
+
 .users {
   float: left;
   width: 30%;
-  margin: 0;
-  padding: 0;
 }
 
 .selected-user {
   float: left;
   width: 50%;
-  margin: 0;
-  padding: 0;
   border: 2px solid #000;
 }

@@ -9,11 +9,13 @@ angular.module('myApp')
         data: {
           users: [],
           books: [],
+          wishlists: [],
         },
 
         init: function () {
           self.initRequestedData('users');
           self.initRequestedData('books');
+          self.initRequestedData('wishlists');
         },
 
         initRequestedData: function (name) {
