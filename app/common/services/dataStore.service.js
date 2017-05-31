@@ -2,50 +2,52 @@
 
 angular.module('myApp')
 
-  .service('dataStore', [function () {
+  .service('dataStore', [dataStoreService]);
 
-    return (function () {
-      var self = {
-        data: {
-          users: [],
-          books: [],
-          wishlists: [],
-        },
+function dataStoreService() {
 
-        init: function () {
-          self.initRequestedData('users');
-          self.initRequestedData('books');
-          self.initRequestedData('wishlists');
-        },
+  return (function () {
+    var self = {
+      data: {
+        users: {},
+        books: {},
+        wishlists: {},
+      },
 
-        initRequestedData: function (name) {
-          self.data[name] = {
-            loading: false,
-            initialized: false,
-            data: [],
-          };
-        },
+      init: function () {
+        self.initRequestedData('users');
+        self.initRequestedData('books');
+        self.initRequestedData('wishlists');
+      },
 
-        setLoading: function(name) {
-          self.data[name].loading = true;
-          self.data[name].initialized = true;
-        },
+      initRequestedData: function (name) {
+        self.data[name] = {
+          loading: false,
+          initialized: false,
+          data: [],
+        };
+      },
 
-        get: function (name) {
-          return self.data[name];
-        },
+      setLoading: function(name) {
+        self.data[name].loading = true;
+        self.data[name].initialized = true;
+      },
 
-        set: function(name, data) {
-          self.data[name] = Object.assign(self.data[name], {
-            loading: false,
-            initialized: true,
-            data: data
-          });
-        }
-      };
+      get: function (name) {
+        return self.data[name];
+      },
 
-      self.init();
+      set: function(name, data) {
+        self.data[name] = Object.assign(self.data[name], {
+          loading: false,
+          initialized: true,
+          data: data
+        });
+      }
+    };
 
-      return self;
-    })();
-  }]);
+    self.init();
+
+    return self;
+  })();
+}

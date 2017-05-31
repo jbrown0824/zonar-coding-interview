@@ -10,32 +10,26 @@
   <div ng-show="books.data.length > 0" class="books pane">
     <ul ng-repeat="book in books.data">
       <li>
-        <b>{{book.title}}</b><br>
+        <a href ng-click="selectBook(book)"><b>{{book.title}}</b></a><br>
         {{book.summary}}
       </li>
     </ul>
   </div>
-  <div class="pane">
-    <div ng-show="selectedBook !== null" class="active-pane pane">
-      <a href ng-click="clearSelectedBook()">Cancel / Close</a>
-      <h3>{{selectedBook.title}}</h3>
+  <div ng-show="selectedBook !== null" class="pane active-pane">
+    <a href ng-click="clearSelectedBook()">Cancel / Close</a>
+    <h3>{{selectedBook.title}}</h3>
 
-      <form ng-submit="addToWishlist()">
-        <label>Add to Wishlist for User:</label>
-        <select ng-options="user.first_name for user in users" ng-model="addBook.user"></select>
-
-        <br />
-
-        <input type="submit" value="Add To WishList" />
-      </form>
+    <form ng-submit="addToWishlist()">
+      <label>Add to Wishlist for User:</label>
+      <select ng-options="user.first_name for user in users.data" ng-model="addBook.user"></select>
 
       <br />
 
-      <h3>Wishlist</h3>
+      <input type="submit" value="Add To WishList" />
 
-      <ul ng-repeat="book in getUserWishlist(selectedUser.id)">
-        <li>{{book.title}}</li>
-      </ul>
-    </div>
+      <br /><br />
+
+      <a href ng-click="deleteBook(selectedBook.id)">Delete This Book</a>
+    </form>
   </div>
 </div>

@@ -32,7 +32,7 @@
 
 .pane {
   float: left;
-  width: 50%;
+  width: 40%;
   margin: 0;
   padding: 0;
 }
@@ -42,7 +42,7 @@
   width: 30%;
 }
 
-.selected-user {
+.active-pane {
   float: left;
   width: 50%;
   border: 2px solid #000;
